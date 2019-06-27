@@ -9,7 +9,7 @@ from matplotlib import pyplot as plt
 from matplotlib import patches as patches
 from mask_functions import rle2mask
 
-IMAGE_PATH = '../sample images/'
+IMAGE_PATH = 'sample images/'
 IMAGE_MEDIA_TYPE = '.dcm'
 IMAGE_SIZE = 1024
 train_rle_sample = pd.read_csv(IMAGE_PATH + 'train-rle-sample.csv', header=None, index_col=0)
@@ -131,7 +131,7 @@ def show_image(image_name):
     else:
         plot_with_mask_and_bbox(dataset, mask_encoded)
 
-for file_path in glob.glob('../sample images/*.dcm')[0:9]:
+for file_path in glob.glob('sample images/*.dcm')[0:3]:
     dataset = pydicom.dcmread(file_path)
     #show_dicom_info(dataset)
     plot_pixel_array(dataset)
